@@ -1,0 +1,113 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+
+library(geonetwork)
+```
+# geonetwork
+
+Classes and methods for handling networks or graphs whose nodes are
+geographical (i.e. locations in the globe). Create, transform, plot.
+
+
+## Installation
+
+<!-- You can install the released version of geonetwork from [CRAN](https://CRAN.R-project.org) with: -->
+
+<!-- ``` r -->
+<!-- install.packages("geonetwork") -->
+<!-- ``` -->
+
+`geonetwork` is in development. You can install the current version
+from GitLab with:
+
+```{r eval = FALSE}
+remotes::install_gitlab("famuvie/geonetwork")
+```
+
+
+## Example
+
+### Creation
+
+A `geonetwork` is an object of class `igraph` whose nodes have
+_geospatial_ attributes (i.e. coordinates and CRS).
+
+Consider the distances (in km) between 21 cities in Europe from the
+`datasets` package. A simple way of constructing a `geonetwork` is
+by combining a data.frame of `nodes` with one of `edges`:
+
+```{r creation}
+cities <- cbind(
+  city = labels(datasets::eurodist),
+  ggmap::geocode(labels(datasets::eurodist), source = "dsk")
+)
+
+distances <- 
+  expand.grid(
+    origin = labels(datasets::eurodist),
+    destin = labels(datasets::eurodist),
+    stringsAsFactors = FALSE,
+    KEEP.OUT.ATTRS = FALSE
+  )
+distances <- 
+  cbind(
+    distances[distances$destin < distances$origin,],
+    distance = as.numeric(datasets::eurodist)
+  )
+
+str(cities)
+str(distances)
+
+eurod_net <- geonetwork(distances, nodes = cities, directed = FALSE)
+```
+
+Several assumptions were made here unless otherwise specified:
+
+- The first column in `cities` was matched with the first two columns
+in `distances`.
+
+- The second and third columns in `cities` were assumed to be 
+longitude and latitude in decimal degrees in a WGS84 CRS.
+
+- The remaining column in `distances` was treated as an edge _weight_.
+
+Now we can readily plot the network, optionally with some additional 
+geographical layer for context:
+
+```{r dummy-object, warning = FALSE, include = FALSE}
+eurod_net <- 
+  sf::st_sf(
+    city = cities$city, 
+    geom = sf::st_sfc(
+      sf::st_multipoint(as.matrix(cities[,-1]), dim = "XY"),
+      crs = 4326
+    )
+  )
+
+```
+
+
+```{r plotting}
+library(sp)
+plot(as(eurod_net, "Spatial"))  # sp
+maps::map(add = TRUE, fill = TRUE, col = "lightgray")
+points(as(eurod_net, "Spatial"))  # sp
+
+
+# library(ggplot2)
+# ggplot() +
+#   geom_sf(eurod_net_dummy) +
+#   geom_sf(spData::world)
+```
+

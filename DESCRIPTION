@@ -14,11 +14,14 @@ LazyData: true
 Imports:
   igraph,
   methods,
+  rgdal,
   sp,
   sf
 Suggests:
     devtools,
+    ggmap,
     knitr,
+    maps,
     mapview,
     rmarkdown,
     roxygen2,

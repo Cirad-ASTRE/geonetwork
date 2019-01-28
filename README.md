@@ -32,27 +32,6 @@ cities <- cbind(
   city = labels(datasets::eurodist),
   ggmap::geocode(labels(datasets::eurodist), source = "dsk")
 )
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Athens&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Barcelona&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Brussels&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Calais&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Cherbourg&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Cologne&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Copenhagen&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Geneva&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Gibraltar&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Hamburg&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Hook%20of%20Holland&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Lisbon&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Lyons&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Madrid&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Marseilles&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Milan&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Munich&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Paris&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Rome&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Stockholm&sensor=false
-#> Information from URL : http://www.datasciencetoolkit.org/maps/api/geocode/json?address=Vienna&sensor=false
 
 distances <- 
   expand.grid(

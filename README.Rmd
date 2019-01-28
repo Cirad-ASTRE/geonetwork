@@ -47,7 +47,7 @@ Consider the distances (in km) between 21 cities in Europe from the
 `datasets` package. A simple way of constructing a `geonetwork` is
 by combining a data.frame of `nodes` with one of `edges`:
 
-```{r creation}
+```{r creation, message = FALSE}
 cities <- cbind(
   city = labels(datasets::eurodist),
   ggmap::geocode(labels(datasets::eurodist), source = "dsk")

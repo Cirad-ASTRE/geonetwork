@@ -1,11 +1,29 @@
 Package: geonetwork
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.0-0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Geographic Networks
+Version: 0.0-1
+Date: 2019-01-28
+Authors@R: person("Facundo", "Muñoz", email = "facundo.munoz@cirad.fr", role = c("aut", "cre"))
+Description: Classes and methods for handling networks or graphs
+  whose nodes are geographical (i.e. locations in the globe). Create,     
+  transform, plot.
+Depends: R (>= 3.2)
+License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Imports:
+  igraph,
+  methods,
+  sp,
+  sf
+Suggests:
+    devtools,
+    knitr,
+    mapview,
+    rmarkdown,
+    roxygen2,
+    testthat
+RoxygenNote: 6.1.1
+URL: https://gitlab.com/famuvie/geonetwork
+BugReports: https://gitlab.com/famuvie/geonetwork/issues
+VignetteBuilder: knitr

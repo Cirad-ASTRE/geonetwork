@@ -22,11 +22,50 @@
 #' @return An object of class \code{geonetwork}, which also inherits
 #' from \code{igraph}.
 #' @export
-#'
+#' @import igraph
+#' @import sf
+#' @importFrom sp CRS
+#' @importFrom rgdal CRSargs
 #' @examples
 #'   e <- data.frame(from = c("A", "A"), to = c("B", "C"))
-#'   n <- data.frame(id = LETTERS[1:3], x = c(0, 0, 1), y = 0, 1, 0)
+#'   n <- data.frame(id = LETTERS[1:3], x = c(0, 0, 1), y = c(0, 1, 0))
 #'   geonetwork(e, n)
-geonetwork <- function(edges, nodes, directed = TRUE, CRS = CRS("+proj=longlat")) {
-  return(invisible(NULL))
+geonetwork <- function(edges, nodes, directed = TRUE, CRS = sp::CRS("+proj=longlat")) {
+
+  stopifnot(
+    ## numeric coordinates
+    all(vapply(nodes[,2:3], is.numeric, TRUE))
+  )
+
+  nodes[, 1] <- as.character(nodes[, 1])
+  edges[, 1] <- as.character(edges[, 1])
+  edges[, 2] <- as.character(edges[, 2])
+
+  ## Node geometries
+  coords <- as.matrix(nodes[, 2:3])
+  sfc <- st_cast(
+    sf::st_sfc(
+      sf::st_multipoint(coords, dim = "XY"),
+      crs = rgdal::CRSargs(CRS)
+    ),
+    "POINT"
+  )
+
+  nodes_df <- nodes[, -(2:3), drop = FALSE]  # Node name and other attributes
+
+  nodes_sf <-
+    sf::st_sf(
+      nodes_df,
+      geom = sfc,                     # Node geometry
+      stringsAsFactors = FALSE
+    )
+
+  ## Standard igraph object
+  ans <- igraph::graph_from_data_frame(edges, directed = directed, vertices = nodes_df)
+
+  ## geospatial node attributes
+  vertex_attr(ans, "geom") <- sfc
+
+  class(ans) <- c("geonetwork", class(ans))
+  return(ans)
 }

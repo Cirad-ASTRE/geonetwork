@@ -4,7 +4,8 @@
 \alias{geonetwork}
 \title{Create geographic networks}
 \usage{
-geonetwork(edges, nodes, directed = TRUE, CRS = CRS("+proj=longlat"))
+geonetwork(edges, nodes, directed = TRUE,
+  CRS = sp::CRS("+proj=longlat"))
 }
 \arguments{
 \item{edges}{data.frame. Edges list and attributes. See Details.}
@@ -37,6 +38,6 @@ System specified in \code{CRS}.
 }
 \examples{
   e <- data.frame(from = c("A", "A"), to = c("B", "C"))
-  n <- data.frame(id = LETTERS[1:3], x = c(0, 0, 1), y = 0, 1, 0)
+  n <- data.frame(id = LETTERS[1:3], x = c(0, 0, 1), y = c(0, 1, 0))
   geonetwork(e, n)
 }

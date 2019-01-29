@@ -53,18 +53,13 @@ geonetwork <- function(edges, nodes, directed = TRUE, CRS = sp::CRS("+proj=longl
 
   nodes_df <- nodes[, -(2:3), drop = FALSE]  # Node name and other attributes
 
-  nodes_sf <-
-    sf::st_sf(
-      nodes_df,
-      geom = sfc,                     # Node geometry
-      stringsAsFactors = FALSE
-    )
-
   ## Standard igraph object
   ans <- igraph::graph_from_data_frame(edges, directed = directed, vertices = nodes_df)
 
   ## geospatial node attributes
-  vertex_attr(ans, "geom") <- sfc
+  ## I can't store them in the graph's attributes since they are
+  ## sent through C functions that loses their attributes.
+  attr(ans, "geom_node") <- sfc
 
   class(ans) <- c("geonetwork", class(ans))
   return(ans)

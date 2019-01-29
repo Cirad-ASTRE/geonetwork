@@ -12,6 +12,7 @@ License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports:
+  geosphere,
   igraph,
   methods,
   rgdal,

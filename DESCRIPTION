@@ -1,7 +1,7 @@
 Package: geonetwork
 Type: Package
 Title: Geographic Networks
-Version: 0.0-1
+Version: 0.1-0
 Date: 2019-01-28
 Authors@R: person("Facundo", "Muñoz", email = "facundo.munoz@cirad.fr", role = c("aut", "cre"))
 Description: Classes and methods for handling networks or graphs

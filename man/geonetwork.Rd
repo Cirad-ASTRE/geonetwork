@@ -29,10 +29,10 @@ nodes.
 The first two columns in \code{edges} must be character or factor,
 and match the node names in the first column of the \code{nodes}
 data.frame. The third column, if any, will be used as edge weights.
-The remaining colmumns will be used as additional edge attributes.
+The remaining columns will be used as additional edge attributes.
 
 The first column in \code{nodes} must be character or factor and
-provide node names or labels, not necessarily uniques. Columns 2
+provide node names or labels, not necessarily unique. Columns 2
 and 3 must be numeric coordinates in the Coordinate Reference
 System specified in \code{CRS}.
 }

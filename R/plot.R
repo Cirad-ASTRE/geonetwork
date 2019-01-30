@@ -7,7 +7,6 @@
 #' @param y Ignored.
 #' @param ... Further specifications passed to \link{plot_sf}.
 #'
-#' @return
 #' @export
 #' @importFrom graphics plot
 #'

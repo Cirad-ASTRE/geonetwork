@@ -1,15 +1,16 @@
 Package: geonetwork
 Type: Package
 Title: Geographic Networks
-Version: 0.0-1
+Version: 0.1-0
 Date: 2019-01-28
+Encoding: UTF-8
 Authors@R: person("Facundo", "Muñoz", email = "facundo.munoz@cirad.fr", role = c("aut", "cre"))
 Description: Classes and methods for handling networks or graphs
   whose nodes are geographical (i.e. locations in the globe). Create,     
   transform, plot.
 Depends: R (>= 3.2)
 License: GPL-3 + file LICENSE
-Encoding: UTF-8
+Language: en-GB
 LazyData: true
 Imports:
   geosphere,

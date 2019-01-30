@@ -57,7 +57,7 @@ str(distances)
 #>  $ destin  : chr  "Athens" "Athens" "Athens" "Athens" ...
 #>  $ distance: num  3313 2963 3175 3339 2762 ...
 
-eurod_net <- geonetwork(distances, nodes = cities, directed = FALSE)
+eurodist <- geonetwork(distances, nodes = cities, directed = FALSE)
 ```
 
 Several assumptions were made here unless otherwise specified:
@@ -71,16 +71,25 @@ Several assumptions were made here unless otherwise specified:
 Now we can readily plot the network, optionally with some additional geographical layer for context:
 
 ``` r
-library(sp)
-plot(as(eurod_net, "Spatial"))  # sp
-maps::map(add = TRUE, fill = TRUE, col = "lightgray")
-points(as(eurod_net, "Spatial"))  # sp
+## Base system
+plot(eurodist, axes = TRUE, type = "n")
+plot(sf::st_geometry(spData::world), col = "lightgray", add = TRUE)
+plot(eurodist, axes = TRUE, add = TRUE)
 ```
 
 <img src="man/figures/README-plotting-1.png" width="100%" />
 
 ``` r
 
+# bgm <- ggmap::get_stamenmap(bbox = unname(sf::st_bbox(eurodist)),
+# zoom = 5, maptype = "watercolor") plot(st_transform(eurodist, 3857),
+# bgMap = bgm)
+
+## tmap
+
+## mapview
+
+## ggplot2
 
 # library(ggplot2)
 # ggplot() +

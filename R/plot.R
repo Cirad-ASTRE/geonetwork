@@ -9,10 +9,11 @@
 #'
 #' @return
 #' @export
+#' @importFrom graphics plot
 #'
 #' @examples
 #' plot(eurodist, axes = TRUE, type = "n")
-#' plot(st_geometry(spData::world), col = "lightgray", add = TRUE)
+#' plot(sf::st_geometry(spData::world), col = "lightgray", add = TRUE)
 #' plot(eurodist, axes = TRUE, add = TRUE)
 plot.geonetwork <- function(x, y, ...) {
 

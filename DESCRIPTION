@@ -26,6 +26,7 @@ Suggests:
     mapview,
     rmarkdown,
     roxygen2,
+    spData,
     testthat
 RoxygenNote: 6.1.1
 URL: https://gitlab.com/famuvie/geonetwork

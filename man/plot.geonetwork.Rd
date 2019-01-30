@@ -18,6 +18,6 @@ Plot one or more attributes of a geonetwork on a map
 }
 \examples{
 plot(eurodist, axes = TRUE, type = "n")
-plot(st_geometry(spData::world), col = "lightgray", add = TRUE)
+plot(sf::st_geometry(spData::world), col = "lightgray", add = TRUE)
 plot(eurodist, axes = TRUE, add = TRUE)
 }

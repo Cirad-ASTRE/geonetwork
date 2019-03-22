@@ -9,7 +9,7 @@ Description: Classes and methods for handling networks or graphs
   whose nodes are geographical (i.e. locations in the globe). Create,     
   transform, plot.
 Depends: R (>= 3.2)
-License: GPL-3 + file LICENSE
+License: GPL-3 | file LICENSE
 Language: en-GB
 LazyData: true
 Imports:

@@ -53,6 +53,13 @@ cities <- cbind(
   ggmap::geocode(labels(datasets::eurodist), source = "dsk")
 )
 
+## ggmap can either use Google Maps Api (which requires registration
+## with credit card and offers limited amount of queries) of 
+## Data Science Toolkit (DSK) whose service is being shut-down.
+## 
+## Alternatively, uses OpenStreetMap Nominatim service
+# tmaptools::geocode_OSM(labels(datasets::eurodist))
+
 distances <- 
   expand.grid(
     origin = labels(datasets::eurodist),

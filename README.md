@@ -12,10 +12,10 @@ Installation
 <!-- ``` r -->
 <!-- install.packages("geonetwork") -->
 <!-- ``` -->
-`geonetwork` is in development. You can install the current version from GitLab with:
+`geonetwork` is in development. You can install the current version from GitHub with:
 
 ``` r
-remotes::install_gitlab("famuvie/geonetwork")
+remotes::install_github("famuvie/geonetwork")
 ```
 
 Example

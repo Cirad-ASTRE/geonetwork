@@ -29,10 +29,10 @@ geographical (i.e. locations in the globe). Create, transform, plot.
 <!-- ``` -->
 
 `geonetwork` is in development. You can install the current version
-from GitLab with:
+from GitHub with:
 
 ```{r eval = FALSE}
-remotes::install_gitlab("famuvie/geonetwork")
+remotes::install_github("famuvie/geonetwork")
 ```
 
 

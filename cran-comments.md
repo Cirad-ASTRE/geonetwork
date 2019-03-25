@@ -1,3 +1,11 @@
+## Re-submission comments
+
+* More detailed description of what the package does
+
+* Begin the Description field with "Provides..."
+
+* No literature references to declare
+
 ## Test environments
 
 * local Linux Mint 18.2 (Ubuntu 16.04), R 3.5.2

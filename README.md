@@ -1,4 +1,6 @@
 
+[![CRAN status](https://www.r-pkg.org/badges/version/geonetwork)](https://cran.r-project.org/package=geonetwork)
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 geonetwork
 ==========
@@ -8,10 +10,12 @@ Classes and methods for handling networks or graphs whose nodes are geographical
 Installation
 ------------
 
-<!-- You can install the released version of geonetwork from [CRAN](https://CRAN.R-project.org) with: -->
-<!-- ``` r -->
-<!-- install.packages("geonetwork") -->
-<!-- ``` -->
+You can install the released version of geonetwork from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("geonetwork")
+```
+
 `geonetwork` is in development. You can install the current version from GitHub with:
 
 ``` r
@@ -85,21 +89,3 @@ plot(eurodist, axes = TRUE, add = TRUE)
 ```
 
 <img src="man/figures/README-plotting-1.png" width="100%" />
-
-``` r
-
-# bgm <- ggmap::get_stamenmap(bbox = unname(sf::st_bbox(eurodist)),
-# zoom = 5, maptype = "watercolor") plot(st_transform(eurodist, 3857),
-# bgMap = bgm)
-
-## tmap
-
-## mapview
-
-## ggplot2
-
-# library(ggplot2)
-# ggplot() +
-#   geom_sf(eurod_net_dummy) +
-#   geom_sf(spData::world)
-```

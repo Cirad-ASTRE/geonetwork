@@ -2,6 +2,8 @@
 output: github_document
 ---
 
+[![CRAN status](https://www.r-pkg.org/badges/version/geonetwork)](https://cran.r-project.org/package=geonetwork)
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r setup, include = FALSE}
@@ -22,11 +24,11 @@ geographical (i.e. locations in the globe). Create, transform, plot.
 
 ## Installation
 
-<!-- You can install the released version of geonetwork from [CRAN](https://CRAN.R-project.org) with: -->
+You can install the released version of geonetwork from [CRAN](https://CRAN.R-project.org) with:
 
-<!-- ``` r -->
-<!-- install.packages("geonetwork") -->
-<!-- ``` -->
+``` r
+install.packages("geonetwork")
+```
 
 `geonetwork` is in development. You can install the current version
 from GitHub with:
@@ -99,6 +101,10 @@ plot(eurodist, axes = TRUE, type = "n")
 plot(sf::st_geometry(spData::world), col = "lightgray", add = TRUE)
 plot(eurodist, axes = TRUE, add = TRUE)
 
+```
+
+```{r include = FALSE, eval = FALSE}
+
 # bgm <- ggmap::get_stamenmap(bbox = unname(sf::st_bbox(eurodist)),
 # zoom = 5, maptype = "watercolor") plot(st_transform(eurodist, 3857),
 # bgMap = bgm)
@@ -113,5 +119,6 @@ plot(eurodist, axes = TRUE, add = TRUE)
 # ggplot() +
 #   geom_sf(eurod_net_dummy) +
 #   geom_sf(spData::world)
+
 ```
 

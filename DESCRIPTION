@@ -35,5 +35,5 @@ Suggests:
     spData,
     testthat
 RoxygenNote: 6.1.1
-URL: https://github.com/Cirad-ASTRE/geonetwork
+URL: https://Cirad-ASTRE.github.io/geonetwork
 BugReports: https://github.com/Cirad-ASTRE/geonetwork/issues

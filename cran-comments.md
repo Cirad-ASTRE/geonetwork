@@ -1,5 +1,7 @@
 ## Re-submission comments
 
+* Adressed the requested fixes in the Description field
+
 * More detailed description of what the package does
 
 * Begin the Description field with "Provides..."

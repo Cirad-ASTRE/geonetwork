@@ -1,16 +1,18 @@
 Package: geonetwork
 Type: Package
 Title: Geographic Networks
-Version: 0.2
+Version: 0.3
 Date: 2019-03-22
 Encoding: UTF-8
 Authors@R: person("Facundo", "Muñoz", email = "facundo.munoz@cirad.fr", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-5061-4241"))
-Description: Provides classes and methods for handling networks or graphs
-  whose nodes are geographical (i.e. locations in the globe). Create
-  a geonetwork object as a graph with node coordinates. Compute network 
-  measures as with any graph while at the same time it supports spatial
-  functionality (CRS transform, bbox, etc.). Plot the geonetwork and
-  combine with supplementary cartography for spatial representation.
+Description: Provides classes and methods for handling networks or 
+  graphs whose nodes are geographical (i.e. locations in the globe).
+  The functionality includes the creation of objects of class geonetwork
+  as a graph with node coordinates, the computation of network measures,
+  the support of spatial operations (projection to different Coordinate
+  Reference Systems, handling of bounding boxes, etc.) and the plotting of
+  the geonetwork object combined with supplementary cartography for spatial 
+  representation.
 Depends: R (>= 3.2)
 License: GPL-3 | file LICENSE
 Language: en-GB

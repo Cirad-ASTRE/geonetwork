@@ -5,6 +5,8 @@
 geonetwork
 ==========
 
+This project moved to https://forgemia.inra.fr/umr-astre/geonetwork/
+
 Classes and methods for handling networks or graphs whose nodes are geographical (i.e. locations in the globe). Create, transform, plot.
 
 Installation
